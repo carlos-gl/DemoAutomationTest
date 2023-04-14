@@ -49,7 +49,7 @@ public class Commands {
     select.selectByVisibleText(value);
   }
 
-  public static void moveSlider(WebDriver driver, By by, int wait) {
+  public static void moveSlider(WebDriver driver, By by, int wait, int pos1, int pos2) {
     WebElement element = (new WebDriverWait(driver, Duration.ofSeconds(wait)))
             .until(ExpectedConditions.elementToBeClickable(by));
     element.findElement(by);
@@ -57,7 +57,7 @@ public class Commands {
     Actions action = new Actions(driver);
     action.moveToElement(element, 0, 0);
     action.clickAndHold();
-    action.moveByOffset(10, 0);
+    action.moveByOffset(pos1, pos2);
     action.build().perform();
     action.click();
   }

@@ -35,7 +35,7 @@ public class SliderPage extends Commands {
       closeAd(driver, dismissButton, 30,"[id='ad_iframe']");
     }
 
-    moveSlider(driver, sliderBar, 30);
+    moveSlider(driver, sliderBar, 30, 10, 0);
   }
 
 }
